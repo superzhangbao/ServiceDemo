@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "MainActivity";
-    private Button mButton,mMbtnStarService,mStopService,mBindService,mUseService;
+    private Button mButton,mMbtnStarService,mStopService,mBindService,mUseService,mUnbindService;
 
     /**
      * ServiceConnection代表与服务的连接，它只有两个方法，
@@ -33,11 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStopService = findViewById(R.id.btn_stopservice);
         mBindService = findViewById(R.id.btn_bindservice);
         mUseService = findViewById(R.id.btn_useservice);
+        mUnbindService = findViewById(R.id.btn_unbindservice);
+
         mButton.setOnClickListener(this);
         mMbtnStarService.setOnClickListener(this);
         mStopService.setOnClickListener(this);
         mBindService.setOnClickListener(this);
         mUseService.setOnClickListener(this);
+        mUnbindService.setOnClickListener(this);
+
 
         conn = new ServiceConnection() {
             /**
